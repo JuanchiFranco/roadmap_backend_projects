@@ -1,0 +1,13 @@
+{
+  "name": "tasks-lists",
+  "version": "1.0.0",
+  "description": "This is a proposed solution to the CLI task tracker roadmap.sh challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Juan Darío Franco Vargas",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -1,0 +1,33 @@
+<div id="weight-converter">
+    <h2>Weight Converter</h2>
+    <div id="weight-form-container">
+        <form id="weight-form" onsubmit="convertUnits(event, 'weight')">
+            <label for="weight-input">Enter weight:</label>
+            <input type="number" id="weight-input" placeholder="Enter value" required />
+
+            <label for="from-unit">From:</label>
+            <select id="from-unit">
+                <option value="grams">Grams</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="pounds">Pounds</option>
+                <option value="ounces">Ounces</option>
+                <option value="stones">Stones</option>
+            </select>
+
+            <label for="to-unit">To:</label>
+            <select id="to-unit">
+                <option value="grams">Grams</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="pounds">Pounds</option>
+                <option value="ounces">Ounces</option>
+                <option value="stones">Stones</option>
+            </select>
+
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+    <div id="weight-result-container" style="display: none;">
+        <p id="weight-result"></p>
+        <button id="reset-button">Reset</button>
+    </div>
+</div>

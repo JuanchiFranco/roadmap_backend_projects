@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Platform API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        header {
+            background: #343a40;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        main {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 2rem;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+        ul {
+            padding-left: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blogging Platform API</h1>
+        <p>Bienvenido a la API de Blogging Platform</p>
+    </header>
+    <main>
+        <h2>Endpoints principales</h2>
+        <ul>
+            <li><code>GET /api/blogs</code> - Listar publicaciones</li>
+            <li><code>GET /api/blogs/:id</code> - Obtener una publicación</li>
+            <li><code>POST /api/blogs</code> - Crear una nueva publicación</li>
+            <li><code>PUT /api/blogs/:id</code> - Actualizar una publicación</li>
+            <li><code>DELETE /api/blogs/:id</code> - Eliminar una publicación</li>
+        </ul>
+        <h2>Documentación</h2>
+        <p>Consulta la documentación completa en <a href="/docs">/docs</a>.</p>
+    </main>
+</body>
+</html>

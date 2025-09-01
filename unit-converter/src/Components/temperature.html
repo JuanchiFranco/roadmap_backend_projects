@@ -1,0 +1,26 @@
+<div id="temperature-converter">
+    <h2>Temperature Converter</h2>
+    <div id="temperature-form-container">
+        <form id="temperature-form" onsubmit="convertUnits(event, 'temperature')">
+            <label for="temperature-input">Enter temperature:</label>
+            <input type="number" id="temperature-input" placeholder="Enter value" required />
+
+            <label for="from-unit">From:</label>
+            <select id="from-unit">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+
+            <label for="to-unit">To:</label>
+            <select id="to-unit">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+</div>
+
