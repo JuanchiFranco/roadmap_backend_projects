@@ -1,20 +1,12 @@
 import { Router } from "express";
+import { register, login } from "./authController.js";
+import { registerUserValidator, loginUserValidator } from "../../middlewares/validators/authValidators.js";
+import { validateFields } from "../../middlewares/validateFields.js";
 
 const router = Router();
 
-router.get("/profile", (req, res) => {
-  console.log("User profile data:", req.body);
-  res.send("User profile retrieved successfully");
-});
+router.post("/register", registerUserValidator, validateFields, register);
 
-router.post("/register", (req, res) => {
-  console.log("User registration data:", req.body);
-  res.send("User registered successfully");
-});
-
-router.post("/login", (req, res) => {
-  console.log("User login data:", req.body);
-  res.send("User logged in successfully");
-});
+router.post("/login", loginUserValidator, validateFields, login);
 
 export default router;

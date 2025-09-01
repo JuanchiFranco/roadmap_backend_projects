@@ -1,11 +1,11 @@
 import express from 'express';
 import type { Request, Response } from 'express';
-import { errorHandler } from './middlewares/errorHandler';
+import { errorHandler } from './middlewares/errorHandler.js';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // routes
-import { authRoutes } from './components/Auth/index';
+import { authRoutes } from './components/Auth/index.js';
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 // Use authRoutes for all routes starting with /auth
-app.use('/auth', authRoutes);
+app.use('/api/v1/auth', authRoutes);
 
 app.use(errorHandler);
 

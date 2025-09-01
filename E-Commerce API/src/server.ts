@@ -1,5 +1,5 @@
-import app from "./app";
-import config from './config/config';
+import app from "./app.js";
+import config from './config/config.js';
 
 // set the port
 const PORT = config.port;
