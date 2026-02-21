@@ -1,47 +1,44 @@
 import todoService from "../services/todoService.js";
 
-const getAll = (req, res, next) => {
+const getAll = async (req, res, next) => {
     try {
-        const todos = todoService.getAllTodos();
+        const todos = await todoService.getAllTodos();
         res.json(todos);
     } catch (err) {
         next(err);
     }
 };
 
-const getById = (req, res, next) => {
+const getById = async (req, res, next) => {
     try {
-        const id = Number(req.params.id);
-        const todo = todoService.getTodoById(id);
+        const todo = await todoService.getTodoById(req.params.id);
         res.json(todo);
     } catch (err) {
         next(err);
     }
 };
 
-const create = (req, res, next) => {
+const create = async (req, res, next) => {
     try {
-        const todo = todoService.createTodo(req.body);
+        const todo = await todoService.createTodo(req.body);
         res.status(201).json(todo);
     } catch (err) {
         next(err);
     }
 };
 
-const update = (req, res, next) => {
+const update = async (req, res, next) => {
     try {
-        const id = Number(req.params.id);
-        const todo = todoService.updateTodo(id, req.body);
+        const todo = await todoService.updateTodo(req.params.id, req.body);
         res.json(todo);
     } catch (err) {
         next(err);
     }
 };
 
-const remove = (req, res, next) => {
+const remove = async (req, res, next) => {
     try {
-        const id = Number(req.params.id);
-        todoService.deleteTodo(id);
+        await todoService.deleteTodo(req.params.id);
         res.status(204).send();
     } catch (err) {
         next(err);
@@ -49,3 +46,4 @@ const remove = (req, res, next) => {
 };
 
 export default { getAll, getById, create, update, remove };
+

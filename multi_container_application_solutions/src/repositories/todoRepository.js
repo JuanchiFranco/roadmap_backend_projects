@@ -1,29 +1,14 @@
-// In-memory store (acts as the "database" layer)
-let todos = [];
-let nextId = 1;
+import Todo from "../models/todoModel.js";
 
-const findAll = () => todos;
+const findAll = () => Todo.find().lean();
 
-const findById = (id) => todos.find((t) => t.id === id) ?? null;
+const findById = (id) => Todo.findById(id).lean();
 
-const create = ({ title, completed = false }) => {
-    const todo = { id: nextId++, title, completed };
-    todos.push(todo);
-    return todo;
-};
+const create = (fields) => Todo.create(fields);
 
-const update = (id, fields) => {
-    const index = todos.findIndex((t) => t.id === id);
-    if (index === -1) return null;
-    todos[index] = { ...todos[index], ...fields };
-    return todos[index];
-};
+const update = (id, fields) =>
+    Todo.findByIdAndUpdate(id, fields, { new: true, runValidators: true }).lean();
 
-const remove = (id) => {
-    const index = todos.findIndex((t) => t.id === id);
-    if (index === -1) return false;
-    todos.splice(index, 1);
-    return true;
-};
+const remove = (id) => Todo.findByIdAndDelete(id).lean();
 
 export default { findAll, findById, create, update, remove };

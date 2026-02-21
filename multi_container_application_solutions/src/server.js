@@ -1,6 +1,6 @@
 import app from "./app.js";
 import constants from "./config/constants.js";
-process.loadEnvFile();
+
 
 const PORT = constants.app.port;
 

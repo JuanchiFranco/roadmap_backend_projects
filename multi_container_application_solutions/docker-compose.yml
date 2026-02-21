@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: todos_mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - todos_net
+
+  api:
+    build: .
+    container_name: todos_api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.docker
+    depends_on:
+      - mongo
+    networks:
+      - todos_net
+
+volumes:
+  mongo_data:
+
+
+networks:
+  todos_net:

@@ -1,7 +1,15 @@
 import express from "express";
+import mongoose from "mongoose";
 import todoRouter from "./routes/todoRoute.js";
+import constants from "./config/constants.js";
 
 const app = express();
+
+// ── Database ────────────────────────────────────────────────
+mongoose
+    .connect(constants.db.uri)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((err) => console.error("MongoDB connection error:", err.message));
 
 // ── Middleware ──────────────────────────────────────────────
 app.use(express.json());
